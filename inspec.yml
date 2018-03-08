@@ -1,0 +1,8 @@
+name: custom-hab_resource
+title: Custom Hab Resource for National Parks
+maintainer: Richard Nixon, Tom Robinson Gore
+copyright: CHef Software Inc
+copyright_email: rnixon@chef.io, trg@chef.io
+license: Apache-2.0
+summary: A sample resource for checking habitat compliance
+version: 0.1.0
