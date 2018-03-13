@@ -23,6 +23,17 @@ control 'development' do
   end
 end
 
+control 'Dev Mongo Service' do
+  impact 0.7
+  title 'np-mongodb'
+  desc 'Checks the status of the np-mongodb service'
+  describe hab_service(url:"http://localhost", name:"np-mongodb", group:"development") do
+    its('bldr_url') { should eq 'https://bldr.habitat.sh'}
+    its('channel') { should eq 'unstable'}
+    its('service_group') { should eq 'np-mongodb.development'}
+    its('topology') { should eq 'standalone'}
+  end
+end
 
 # describe hab_ring(url:"http://34.244.174.195") do
 #   its('census_groups') { should include 'haproxy.production'}
