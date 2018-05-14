@@ -1,8 +1,8 @@
 # Author: Tom Robinson-Gore
 require 'httpclient'
 
-class HabService < Inspec.resource(1)
-  name 'hab_service'
+class HabDeps < Inspec.resource(1)
+  name 'hab_deps'
   desc 'Tests habitat services'
 
   def initialize(opts = {})
@@ -11,32 +11,16 @@ class HabService < Inspec.resource(1)
     # return fail_resource 'Must provide :name param' unless @opts.keys.include? :url
   end
 
-  def bldr_url
-    service['bldr_url']
-  end
-
-  def channel
-    service['channel']
-  end
-
-  def pkg
-    service['pkg']['deps'].detect { |p| p['name'] == 'cacerts' }
-  end
-
-  def service_group
-    service['service_group']
-  end
-
-  def topology
-    service['topology']
+  def deps
+    deps['pkg']['deps'].detect { |p| p['name'] == 'cacerts' }
   end
 
   # def service
   #   @service ||= JSON.parse(::HTTPClient.get("#{@opts[:url]}:9631/services/#{@opts[:name]}/#{@opts[:group]}").body)
   # end
 
-  def service
-    @service ||= JSON.parse(::HTTPClient.get("#{@opts[:url]}:9631/services/#{@opts[:name]}/#{@opts[:group]}").body)
+  def deps
+    @deps ||= JSON.parse(::HTTPClient.get("#{@opts[:url]}:9631/services/np-mongodb/default").body)
   end
   # np-mongodb.default
 
