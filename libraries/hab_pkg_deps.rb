@@ -1,8 +1,8 @@
 # Author: Tom Robinson-Gore
 require 'httpclient'
 
-class HabService < Inspec.resource(1)
-  name 'hab_service'
+class HabPkgDeps < Inspec.resource(1)
+  name 'hab_pkg_deps'
   desc 'Tests habitat services'
 
   def initialize(opts = {})
@@ -10,29 +10,26 @@ class HabService < Inspec.resource(1)
     # return fail_resource "Must use named parameters (eg name:'bobo')" unless @opts.is_a? Hash
     # return fail_resource 'Must provide :name param' unless @opts.keys.include? :url
   end
+  #
+  # def pkg_deps
+  #   service['pkg']['deps'].detect { |p| p['name'] == 'cacerts' }
+  # end
 
-  def bldr_url
-    service['bldr_url']
+  def pkg_deps_deps
+    service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }
   end
 
-  def channel
-    service['channel']
-  end
+  # def origin
+  #   array['origin']
+  # end
 
-  def pkg_deps
-    service['pkg']['deps'].detect { |p| p['name'] == 'cacerts' }
-  end
-
-
-
-  def service_group
-    service['service_group']
-  end
-
-  def topology
-    service['topology']
-  end
-
+  # def release
+  #   service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }
+  # end
+  #
+  # def version
+  #   service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }
+  # end
   # def service
   #   @service ||= JSON.parse(::HTTPClient.get("#{@opts[:url]}:9631/services/#{@opts[:name]}/#{@opts[:group]}").body)
   # end

@@ -1,46 +1,30 @@
-control 'Dev Mongo Service' do
-  impact 0.7
-  title 'np-mongodb'
-  desc 'Checks the status of the np-mongodb service'
-  describe hab_service(url:"http://localhost", name:"np-mongodb", group:"default") do
-    its('bldr_url') { should eq 'https://bldr.habitat.sh'}
-    its('channel') { should eq 'unstable'}
-    its('service_group') { should eq 'np-mongodb.development'}
-    its('topology') { should eq 'standalone'}
-    its('pkg') { should eq 'standalone'}
-  end
-end
-#
-# control 'Dev Mongo deps' do
-#   impact 0.7
-#   title 'np-mongodb'
-#   desc 'Checks the status of the np-mongodb pkg_deps'
-#   describe hab_deps(url:"http://localhost", name:"np-mongodb", group:"default") do
-#     its('deps') { should eq 'standalone'}
-#   end
-# end
-#
-#
-# control 'Dev Mongo deps' do
+# control 'Dev Mongo Service' do
 #   impact 0.7
 #   title 'np-mongodb'
 #   desc 'Checks the status of the np-mongodb service'
 #   describe hab_service(url:"http://localhost", name:"np-mongodb", group:"default") do
-#     its('deps') { should eq 'standalone'}
+#     its('pkg_deps') { should eq 'standalone'}
 #   end
 # end
+
+control 'Dev Mongo Service' do
+  impact 0.7
+  title 'np-mongodb'
+  desc 'Checks the status of the np-mongodb service'
+  describe hab_pkg_deps(url:"http://localhost", name:"np-mongodb", group:"default", pkg_name:"glibc") do
+    its('pkg_deps_deps') { should eq 'standalone'}
+    # its('origin') { should cmp 'core'}
+    # its('origin') { should eq 'core'}
+    # its('release') { should be '20170513215104'}
+    # its('version') { should be 'version'}
+  end
+end
+
+
+
 #
-# # describe hab_ring(url:"http://34.244.174.195") do
-# #   its('census_groups') { should include 'haproxy.production'}
-# # end
-#
-#
-# # describe hab_deps(url:"http://localhost", name:"np-mongodb", group:"development") do
-# #   its('origin') { should eq 'core'}
-# #   its('name') { should eq 'unstable'}
-# #   its('service_group') { should eq 'np-mongodb.development'}
-# #   its('topology') { should eq 'standalone'}
-# # end
-#
-#
-# # {"origin":"core","name":"glibc","version":"2.22","release":"20170513201042"}
+# -"standalone"
+#  +"name" => "cacerts",
+#  +"origin" => "core",
+#  +"release" => "20170513215104",
+#  +"version" => "version",
