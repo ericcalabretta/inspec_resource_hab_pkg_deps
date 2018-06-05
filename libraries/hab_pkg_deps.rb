@@ -14,11 +14,11 @@ class HabPkgDeps < Inspec.resource(1)
   end
 
   def release
-    service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }['release']
+    service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }['release'].to_f
   end
 
   def version
-    service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }['version']
+    service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }['version'].to_f
   end
 
   def service
