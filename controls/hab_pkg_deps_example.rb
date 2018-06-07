@@ -4,7 +4,7 @@ control 'Tomcat Deps tomcat8' do
   desc 'Checks the dependencies of the np-mongodb running service'
   describe hab_pkg_deps(url: 'http://localhost', name: 'national-parks', group: 'default', pkg_name: 'glibc') do
     its('origin') { should eq 'core' }
-    its('version') { should be >= 2.22 }
-    its('release') { should be >=  20170513201042 }
+    its('version') { should eq  '2.22' }
+    its('release') { should be >= 20170513201042 }
   end
 end

@@ -18,7 +18,7 @@ class HabPkgDeps < Inspec.resource(1)
   end
 
   def version
-    service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }['version'].to_f
+    service['pkg']['deps'].detect { |p| p['name'] == "#{@opts[:pkg_name]}" }['version']
   end
 
   def service
