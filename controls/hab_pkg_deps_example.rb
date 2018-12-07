@@ -2,7 +2,7 @@ control 'dependency_acl' do
   impact 1.0
   title 'acl'
   desc 'Checks the dependencies of the national-park running service'
-  describe hab_pkg_deps(url: 'http://localhost', name: 'national-parks', group: 'dev', pkg_name: 'acl') do
+  describe hab_pkg_deps(url: 'http://localhost', name: 'national-parks', group: 'default', pkg_name: 'acl') do
     its('origin') { should eq 'core' }
     its('version') { should eq  '2.2.52' }
     its('release') { should be >= 20170513213108 }
