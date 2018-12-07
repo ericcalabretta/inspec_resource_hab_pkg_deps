@@ -1,8 +1,8 @@
-name: custom-hab_pkg_deps_resource
-title: Custom Hab Resource for package dependencies
+name: national-parks-application
+title: national-parks-application
 maintainer: Eric Calabretta
 copyright: Chef Software Inc
 copyright_email: ecalabretta@chef.io
 license: Apache-2.0
 summary: A sample resource for checking habitat package dependencies
-version: 0.1.1
+version: 0.1.6
