@@ -1,8 +1,8 @@
-name: national-parks-application
-title: national-parks-application
+name: Dependencies-with-CVEs
+title: Dependencies-with-CVEs
 maintainer: Eric Calabretta
 copyright: Chef Software Inc
 copyright_email: ecalabretta@chef.io
 license: Apache-2.0
 summary: A sample resource for checking habitat package dependencies
-version: 0.1.6
+version: 0.2.1
