@@ -17,6 +17,19 @@ This custom resource uses the Habitat Supervisor API to test package dependencie
 
 ```
 inspec exec inspec_resource_hab_pkg_deps
+
+Profile: Dependencies-with-CVEs (Dependencies-with-CVEs)
+Version: 0.2.1
+Target:  local://
+
+  ✔  CVE-2017-16997: glibc
+     ✔  hab_pkg_deps origin should eq "core"
+     ✔  hab_pkg_deps version should eq "2.27"
+     ✔  hab_pkg_deps release should be >= 20180608041157
+
+
+Profile Summary: 1 successful control, 0 control failures, 0 controls skipped
+Test Summary: 3 successful, 0 failures, 0 skipped
 ```
 
 To do:  
