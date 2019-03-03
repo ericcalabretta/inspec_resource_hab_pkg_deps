@@ -16,6 +16,14 @@ class HabPkg < Inspec.resource(1)
     service['pkg']['ident']
   end
 
+  def pkg_svc_user
+    service['pkg']['svc_user']
+  end
+
+  def pkg_svc_group
+    service['pkg']['svc_group']
+  end
+
   def service
     # @service ||= JSON.parse(::HTTPClient.get("#{@opts[:url]}:9631/services/#{@opts[:name]}/#{@opts[:group]}").body)
     @service ||= JSON.parse(inspec.http("#{@opts[:url]}:9631/services/#{@opts[:name]}/#{@opts[:group]}").body)
