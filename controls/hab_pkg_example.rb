@@ -1,0 +1,8 @@
+control 'CVE-2017-16997' do
+    impact 1.0
+    title 'glibc'
+    desc 'Checks the dependencies of the national-park running service'
+    describe hab_pkg(url: 'http://localhost', name: 'sample', group: 'default') do
+      its('pkg_ident') { should eq 'eric/sample/0.1.0/20190303202613' }
+    end
+  end
