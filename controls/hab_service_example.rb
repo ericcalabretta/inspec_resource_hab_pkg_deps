@@ -1,6 +1,6 @@
 control 'hab_service' do
     impact 0.7
-    title 'np-mongodb'
+    title 'sample'
     desc 'Checks the status of the np-mongodb service'
     describe hab_service(url:"http://localhost", name:"sample", group:"default") do
       its('bldr_url') { should eq 'https://bldr.habitat.sh'}
@@ -8,7 +8,6 @@ control 'hab_service' do
       its('topology') { should eq 'standalone'}
       its('update_strategy') { should eq 'none'}
       its('desired_state') { should eq 'Up'}
-
     end
   end
   

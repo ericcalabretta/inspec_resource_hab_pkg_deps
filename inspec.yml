@@ -1,5 +1,5 @@
-name: Dependencies-with-CVEs
-title: Dependencies-with-CVEs
+name: sample_app
+title: sample_app
 maintainer: Eric Calabretta
 copyright: Chef Software Inc
 copyright_email: ecalabretta@chef.io
