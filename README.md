@@ -1,3 +1,11 @@
+#
+Set url, name, group attributes in inspec.yml
+
+# to improve
+-add error handling 
+-health-check takes 10-20 seconds before available
+-improve types of data 
+
 # Custom InSpec resource to validate running .hart dependencies
 
 This custom resource uses the Habitat Supervisor API to test package dependencies. It Ruby's HTTPClient so you don't need to use InSpec Target mode for remote systems. You specify the remote target in the URL of the profil, or if you're running against the local machine the URL should be localhost. 
