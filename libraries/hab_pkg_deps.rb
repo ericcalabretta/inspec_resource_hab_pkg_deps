@@ -22,6 +22,6 @@ class HabPkgDeps < Inspec.resource(1)
   end
 
   def service
-    @service ||= JSON.parse(::HTTPClient.get("#{@opts[:url]}:9631/services/#{@opts[:name]}/#{@opts[:group]}").body)
+    @service ||= JSON.parse(inspec.http("#{@opts[:url]}:9631/services/#{@opts[:name]}/#{@opts[:group]}").body)
   end
 end
