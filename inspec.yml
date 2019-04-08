@@ -1,5 +1,5 @@
-name: sample_app
-title: nginx_app
+name: nginx_app
+title: validate nginx habitat managed application
 maintainer: Eric Calabretta
 copyright: Chef Software Inc
 copyright_email: ecalabretta@chef.io
