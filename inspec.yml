@@ -1,19 +1,8 @@
 name: sample_app
-title: sample_app
+title: nginx_app
 maintainer: Eric Calabretta
 copyright: Chef Software Inc
 copyright_email: ecalabretta@chef.io
 license: Apache-2.0
 summary: A sample resource for checking habitat package dependencies
 version: 0.1.0
-
-attributes:
-  - name: url
-    type: string
-    value: 'http://localhost'
-  - name: name
-    type: string
-    value: 'sample'
-  - name: group
-    type: string
-    value: 'default'
