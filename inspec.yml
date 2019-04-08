@@ -5,7 +5,7 @@ copyright: Chef Software Inc
 copyright_email: ecalabretta@chef.io
 license: Apache-2.0
 summary: A sample resource for checking habitat package dependencies
-version: 0.2.1
+version: 0.1.0
 
 attributes:
   - name: url
