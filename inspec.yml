@@ -1,5 +1,5 @@
-name: nginx_app
-title: nginx habitat managed application
+name: contosouniversity
+title: contosouniversity habitat managed application
 maintainer: Eric Calabretta
 copyright: Chef Software Inc
 copyright_email: ecalabretta@chef.io

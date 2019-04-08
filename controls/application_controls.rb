@@ -1,4 +1,4 @@
-name = attribute('name', default:'nginx')
+name = attribute('name', default:'contosouniversity')
 group = attribute('group', default:'default')
 url = attribute('url', default:'http://localhost')
 
