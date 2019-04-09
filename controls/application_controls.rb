@@ -1,6 +1,6 @@
 name = attribute('name', default:'contosouniversity')
 group = attribute('group', default:'default')
-url = attribute('url', default:'http://localhost')
+url = attribute('url', default:'http://18.237.80.22')
 
 control 'Health Check' do
   impact 1.0
@@ -33,7 +33,6 @@ control 'Habitat Supervisor Configuration' do
     end
   end
   
-
 control 'Deployed Release' do
     impact 1.0
     title 'Current Release 20190314030908'
