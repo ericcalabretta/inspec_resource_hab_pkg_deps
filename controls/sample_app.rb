@@ -1,6 +1,6 @@
 name = attribute('name', default:'sample')
 group = attribute('group', default:'default')
-url = attribute('url', default:'http://35.161.123.109')
+url = attribute('url', default:'http://localhost')
 
 control 'Health Check' do
   impact 1.0
