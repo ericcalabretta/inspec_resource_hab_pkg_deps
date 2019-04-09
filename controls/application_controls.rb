@@ -1,6 +1,6 @@
 name = attribute('name', default:'contosouniversity')
 group = attribute('group', default:'default')
-url = attribute('url', default:'http://192.168.50.121')
+url = attribute('url', default:'http://localhost')
 
 control 'Health Check' do
   impact 1.0
